@@ -1,0 +1,11 @@
+.donors-thumbnail{
+    min-height: 275px;
+    color: white;
+    background: #9B9BBE;
+}
+
+@media screen and (max-width:768px) {
+    .donors-thumbnail{
+        min-height: 225px;
+    }
+}

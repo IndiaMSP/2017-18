@@ -1,0 +1,65 @@
+<form [formGroup]="registerBanksForm" (ngSubmit)="registerBanks()" autocomplete="off">
+  <div class="form-group input-banks-group">
+    <input type="text" formControlName="name" placeholder="Name" class="form-control input-banks">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div *ngIf="name.errors?.required" class="errors-banks">Name is Required</div>
+      <div *ngIf="name.errors?.pattern" class="errors-banks">Name should contain only Alphabets</div>
+      <div *ngIf="name.errors?.minlength" class="errors-banks">Name must be more than {{name.errors?.minlength.requiredLength}}</div>
+      <div *ngIf="name.errors?.maxlength" class="errors-banks">Name should be less than {{name.errors?.maxlength.requiredLength}}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group input-banks-group">
+        <input type="text" formControlName="ownerName" placeholder="Owner Name" class="form-control input-banks">
+        <div *ngIf="ownerName.invalid && (ownerName.dirty || ownerName.touched)">
+          <div *ngIf="ownerName.errors?.required" class="errors-banks">Owner Name is Required</div>
+          <div *ngIf="ownerName.errors?.pattern" class="errors-banks">Owner Name should be Alphabets</div>
+          <div *ngIf="ownerName.errors?.minlength" class="errors-banks">Owner Name should be more than {{ownerName.errors?.minlength.requiredLength}}</div>
+          <div *ngIf="ownerName.errors?.maxlength" class="errors-banks">Owner Name should be less than {{ownerName.errors?.maxlength.requiredLength}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group input-banks-group">
+        <input type="text" placeholder="Type" formControlName="type" class="form-control input-banks">
+        <div *ngIf="type.invalid && (type.dirty || type.touched) ">
+          <div *ngIf="type.errors?.required" class="errors-banks">Type Name is Required</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div formGroupName="address">
+    <div class="form-group input-banks-group">
+      <input type="text" placeholder="Street" formControlName="street" class="form-control input-banks">
+      <div *ngIf="street.invalid && (street.dirty || street.touched) ">
+        <div *ngIf="street.errors?.required" class="errors-banks">Street Name is Required</div>
+        <div *ngIf="street.errors?.minlength" class="errors-banks">Street Name should be more than {{street.errors?.minlength.requiredLength}}</div>
+        <div *ngIf="street.errors?.maxlength" class="errors-banks">Street Name should be less than {{street.errors?.maxlength.requiredLength}}</div>
+      </div>
+    </div>
+    <div class="form-group input-banks-group">
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" placeholder="City Name" formControlName="city" class="form-control input-banks">
+          <div *ngIf="city.invalid && (city.dirty || city.touched)">
+            <div *ngIf="city.errors?.required" class="errors-banks">City Name is Required</div>
+            <div *ngIf="city.errors?.minlength" class="errors-banks">City Name should be more than {{city.errors?.minlength.requiredLength}}</div>
+            <div *ngIf="city.errors?.maxlength" class="errors-banks">City Name should be less than {{city.errors?.maxlength.requiredLength}}</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input type="text" placeholder="State Name" formControlName="state" class="form-control input-banks">
+          <div *ngIf="state.invalid && (state.dirty || state.touched)">
+            <div *ngIf="state.errors?.required" class="errors-banks">State Name is Required</div>
+            <div *ngIf="state.errors?.minlength" class="errors-banks">State Name sholud be more than {{state.errors?.minlength.requiredLength}}</div>
+            <div *ngIf="state.errors?.maxlength" class="errors-banks">State Name should be less than {{state.errors?.maxlength.requiredLength}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group input-banks-group">
+    <button type="submit" [disabled]="registerBanksForm.invalid" class="btn btn-danger btn-submit-form">Submit</button>
+  </div>
+</form>

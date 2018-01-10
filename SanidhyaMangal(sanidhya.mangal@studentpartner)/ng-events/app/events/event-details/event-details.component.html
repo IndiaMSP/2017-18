@@ -1,0 +1,46 @@
+<div class="container">
+        <img [src]="event?.imageUrl" [alt]="event?.name" class="event-image">
+      
+        <div class="row">
+          <div class="col-md-11">
+            <h2>{{event?.name | uppercase}} </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div><strong>Date:</strong> {{event?.date | date}}</div>
+            <div><strong>Time:</strong> {{event?.time}}</div>
+            <div><strong>Price:</strong> {{event?.price | currency:'INR':true}}</div>
+          </div>
+          <div class="col-md-6">
+            <address>
+              <strong>Address:</strong><br />
+              {{event?.location?.address}}<br />
+              {{event?.location?.city}}, {{event?.location?.country}}
+            </address>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-2">
+            <h3 style="margin:0">Sessions</h3>
+          </div>
+          <div class="col-md-7" style="margin-bottom:10px;" >
+            <div class=" btn-group btn-group-sm" style="margin-right: 20px; margin-inline-start: 20px;">
+              <button [class.active]="sortBy==='name'" (click)="sortBy='name'" class="btn btn-default">By Name</button>
+              <button [class.active]="sortBy==='votes'" (click)="sortBy='votes'" class="btn btn-default">By Votes</button>  
+            </div> 
+            <div class="btn-group btn-group-sm">
+              <button [class.active]="filterBy==='all'" (click)="filterBy='all'" class="btn btn-default">All</button>
+              <button [class.active]="filterBy==='beginner'" (click)="filterBy='beginner'" class="btn btn-default">Beginner</button>
+              <button [class.active]="filterBy==='intermediate'" (click)="filterBy='intermediate'" class="btn btn-default">Intermediate</button>
+              <button [class.active]="filterBy==='advanced'" (click)="filterBy='advanced'" class="btn btn-default">Advanced</button>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <a (click)="addSession()">Add Session</a>
+          </div>
+        </div>
+        <sessions-list *ngIf="!addMode" [sortBy]="sortBy" [filterBy]="filterBy" [sessions]="event?.sessions"></sessions-list>
+        <create-session *ngIf="addMode" (AddNewSession)="saveSession($event)" (CancelAddSession)="ExitCreateSession()"></create-session>
+      </div>

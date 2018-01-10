@@ -1,0 +1,18 @@
+<section>
+  <div class="container">
+    <h1>Register {{viewMod}} </h1>
+    <p>Lipsum Text</p>
+    <div class="row">
+      <div class="col-md-4">
+        <ul class="register-nav">
+          <li><a [class.active]="viewMod=='Donor'" (click)="viewMod='Donor'">Donor</a></li>
+          <li><a [class.active]="viewMod=='Bank'"  (click)="viewMod='Bank'" >Bank</a></li>
+        </ul>
+      </div>
+    </div>
+    <div [ngSwitch]="viewMod">
+      <register-donor *ngSwitchCase="'Donor'"></register-donor>
+      <register-banks *ngSwitchCase="'Bank'"></register-banks>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+<section>
+  <div class="container">
+    <h1>Banks</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu metus ac lorem faucibus vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a sodales est, et ullamcorper ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris turpis justo, sagittis eu pharetra eu, pharetra quis arcu. Proin in ullamcorper ligula, ac scelerisque leo. Quisque quis magna dui. Phasellus sollicitudin mattis justo, in rhoncus augue dapibus in. Fusce consequat efficitur nisl quis aliquam. Nulla tincidunt nunc vitae pulvinar elementum. Aenean quis sapien at diam dignissim egestas a vel nisi. Proin leo justo, tincidunt quis fermentum in, euismod ut justo. Duis felis ante, imperdiet eget arcu eu, ultrices fringilla ligula. Aliquam pellentesque accumsan scelerisque. Donec accumsan, lacus sed sagittis elementum, augue eros ullamcorper orci, ac vestibulum ante enim ac libero</p>
+    <div class="row">
+      <div class="col-md-6" *ngFor="let bank of banks">
+        <banks-thumbnail [bank-details]="bank" ></banks-thumbnail>
+      </div>
+    </div>
+    <div>
+      <h2 *ngIf="banks.length == 0">No Banks Registered Till now Why dont you Create one</h2>
+    </div>
+  </div>
+</section>

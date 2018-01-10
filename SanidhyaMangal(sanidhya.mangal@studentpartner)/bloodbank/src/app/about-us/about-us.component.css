@@ -1,0 +1,32 @@
+form>.contact-form-group>input{
+    border: none;
+    border-bottom:2px rgba(160, 14, 14, 0.45) solid ;
+    background: #ddddf2;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+    color: #2646AD;
+}
+form>.contact-form-group>textarea{
+    /* border:.5px rgba(160, 14, 14, 0.45) solid ; */
+    background: rgba(160, 14, 14, 0.09);
+    outline: none;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #2646AD;
+}
+form>.contact-form-group>textarea:focus{
+    /* border:.5px rgba(160, 14, 14, 0.45) solid ; */
+    background: rgba(160, 14, 14, 0.09);
+    outline: none;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #2646AD;
+}
+#btn-feedback{
+    padding:7.5px 15px;
+    align-content: center; 
+}
+.error-validations{
+    color: #214EE0;
+}
