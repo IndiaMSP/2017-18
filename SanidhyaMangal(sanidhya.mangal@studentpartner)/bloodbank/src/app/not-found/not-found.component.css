@@ -1,0 +1,22 @@
+.not-found-404{
+    text-align: center;
+}
+.not-found-404>h1{
+    font-size: 250px;
+    font-weight: bolder;
+}
+.router-url{
+    color: #161658;
+    font-weight: 300
+}
+@media only screen and (max-width:768px) {
+    .not-found-404>h1{
+        font-size: 100px;
+    }
+    .not-found-404>h2{
+        font-size: 28px;
+    }
+    .not-found-404>h3{
+        font-size: 18px;
+    }
+}

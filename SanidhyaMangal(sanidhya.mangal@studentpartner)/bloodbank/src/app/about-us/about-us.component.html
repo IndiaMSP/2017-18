@@ -1,0 +1,38 @@
+<section>
+  <div class="container">
+    <h1>About Us</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more  recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <div class="row">
+      <div class="col-md-9">
+        <form [formGroup]="contactForm" (ngSubmit)="sendFeedback()" autocomplete="off">
+          <div class="form-group contact-form-group">
+            <label for="name">Name</label>
+            <input class="form-control" formControlName="name" id="name" type="text">
+            <div *ngIf="name.invalid && (name.touched || name.dirty)">
+              <div class="error-validations" *ngIf="name.errors?.required">Name is Required</div>
+              <div class="error-validations" *ngIf="name.errors?.pattern">Name must be only Charachters</div>
+              <div class="error-validations" *ngIf="name.errors?.maxlength">Name too long must be less than {{name.errors.maxlength.requiredLength}}</div>
+            </div>
+          </div>
+          <div class="form-group contact-form-group">
+            <label for="email">Email</label>
+            <input class="form-control" id="email" formControlName="email" type="email">
+            <div *ngIf="email.invalid && (email.touched || email.dirty)">
+              <div class="error-validations" *ngIf="email.errors?.required">Email is required</div>
+              <div class="error-validations" *ngIf="email.errors?.email && !(email.errors?.required) ">Should be of type Email</div>
+            </div>
+          </div>
+          <div class="form-group contact-form-group">
+            <label for="feedBack">FeedBack</label>
+            <textarea id="feedBack" formControlName="feedBack" cols="30" rows="5" class="form-control"></textarea>
+            <div *ngIf="feedBack.invalid && (feedBack.dirty|| feedBack.touched)">
+              <div class="error-validations" *ngIf="feedBack.errors?.required">Feedback is required</div>
+              <div class="error-validations" *ngIf="feedBack.errors?.minlength">Feedback too short must be more than {{feedBack.errors.minlength.requiredLength}}</div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-danger" [disabled]="contactForm.invalid" id="btn-feedback">Send</button>
+        </form>
+      </div> 
+    </div>
+  </div>
+</section>

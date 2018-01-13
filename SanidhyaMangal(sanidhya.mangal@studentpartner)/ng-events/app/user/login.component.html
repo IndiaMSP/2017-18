@@ -1,0 +1,18 @@
+<h1>Login</h1>
+<hr>
+<div class="col-md-4">
+    <form #loginForm = "ngForm" (ngSubmit)="login(loginForm.value)" autocomplete="off" novalidate>
+        <div class="form-group">
+            <label for="userName">User Name:</label>
+            <em *ngIf="loginForm.controls.userName?.invalid &&(loginForm.controls.userName.touched)">Required</em>
+            <input required type="text" (ngModel)="userName" name="userName" class="form-control" id="userName" placeholder="User Name">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <em *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password.touched)">Required</em>
+            <input required type="password" (ngModel)="passowrd" name="password" id="password" class="form-control" placeholder="Password">
+        </div>
+        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
+        <button type="button" (click)="cancel()" class="btn btn-default">Cancel</button>
+    </form>
+</div>

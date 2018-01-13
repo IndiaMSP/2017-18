@@ -1,0 +1,11 @@
+.banks-thumbnail{
+    min-height: 225px;
+    color: white;
+    background: #9B9BBE;
+}
+
+@media screen and (max-width:768px) {
+    .banks-thumbnail{
+        min-height: 200px;
+    }
+}

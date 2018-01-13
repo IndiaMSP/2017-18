@@ -1,0 +1,18 @@
+.register-nav>li>a{
+    font-size: 16px;
+    padding: 7.5px 2px;
+    color: #FD5E5E; 
+    text-decoration: none;
+}
+.register-nav>li{
+    display: inline-block;
+    list-style: none;
+}
+.register-nav>li>a:hover{
+    color: #404070; 
+    text-decoration: none;
+}
+.register-nav>li>a.active{
+    color: #404070; 
+    text-decoration: none;   
+}

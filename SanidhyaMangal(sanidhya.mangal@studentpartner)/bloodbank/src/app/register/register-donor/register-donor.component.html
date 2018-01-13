@@ -1,0 +1,75 @@
+<form [formGroup]="registerDonorsForm" (ngSubmit)="registerDonor()" autocomplete="off">
+  <div class="form-group input-donor-group">
+    <input type="text" formControlName="name" placeholder="Name" class="form-control input-donors">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div *ngIf="name.errors?.required" class="errors-donors">Name is Required</div>
+      <div *ngIf="name.errors?.pattern" class="errors-donors">Name should contain only Alphabets</div>
+      <div *ngIf="name.errors?.minlength" class="errors-donors">Name must be more than {{name.errors?.minlength.requiredLength}}</div>
+      <div *ngIf="name.errors?.maxlength" class="errors-donors">Name should be less than {{name.errors?.maxlength.requiredLength}}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group input-donor-group">
+        <input type="text" formControlName="age" placeholder="Age" class="form-control input-donors">
+        <div *ngIf="age.invalid && (age.dirty || age.touched)">
+          <div *ngIf="age.errors?.required" class="errors-donors">Age is Required</div>
+          <div *ngIf="age.errors?.pattern" class="errors-donors">Age should be in Numbers</div>
+          <div *ngIf="age.errors?.min" class="errors-donors">Age should be more than 18</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group input-donor-group">
+        <input type="text" formControlName="bloodGroup" placeholder="Blood Group (small letters)" class="form-control input-donors" [appInputFormat]>
+        <div *ngIf="bloodGroup.invalid && (bloodGroup.dirty || bloodGroup.touched)">
+          <div *ngIf="bloodGroup.errors?.required" class="errors-donors">Blood Group is Required</div>
+          <div *ngIf="bloodGroup.errors?.pattern" class="errors-donors">Blood Group is not Valid</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group input-donor-group">
+        <input type="text" formControlName="contactNumber" placeholder="Contact Number" class="form-control input-donors">
+        <div *ngIf="contactNumber.invalid && (contactNumber.dirty || contactNumber.touched)">
+          <div *ngIf="contactNumber.errors?.required" class="errors-donors">Contact Number is Required</div>
+          <div *ngIf="contactNumber.errors?.pattern || contactNumber.errors?.minlength" class="errors-donors">Contact Number should Valid</div>
+          <div *ngIf="contactNumber.errors?.maxlength" class="errors-donors">Contact Number should be less than 10 Digits</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div formGroupName="address">
+    <div class="form-group input-donor-group">
+      <input type="text" placeholder="Street" formControlName="street" class="form-control input-donors">
+      <div *ngIf="street.invalid && (street.dirty || street.touched) ">
+        <div *ngIf="street.errors?.required" class="errors-donors">Street Name is Required</div>
+        <div *ngIf="street.errors?.minlength" class="errors-donors">Street Name should be more than {{street.errors?.minlength.requiredLength}}</div>
+        <div *ngIf="street.errors?.maxlength" class="errors-donors">Street Name should be less than {{street.errors?.maxlength.requiredLength}}</div>
+      </div>
+    </div>
+    <div class="form-group input-donor-group">
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" placeholder="City Name" formControlName="city" class="form-control input-donors">
+          <div *ngIf="city.invalid && (city.dirty || city.touched)">
+            <div *ngIf="city.errors?.required" class="errors-donors">City Name is Required</div>
+            <div *ngIf="city.errors?.minlength" class="errors-donors">City Name should be more than {{city.errors?.minlength.requiredLength}}</div>
+            <div *ngIf="city.errors?.maxlength" class="errors-donors">City Name should be less than {{city.errors?.maxlength.requiredLength}}</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input type="text" placeholder="State Name" formControlName="state" class="form-control input-donors">
+          <div *ngIf="state.invalid && (state.dirty || state.touched)">
+            <div *ngIf="state.errors?.required" class="errors-donors">State Name is Required</div>
+            <div *ngIf="state.errors?.minlength" class="errors-donors">State Name sholud be more than {{state.errors?.minlength.requiredLength}}</div>
+            <div *ngIf="state.errors?.maxlength" class="errors-donors">State Name should be less than {{state.errors?.maxlength.requiredLength}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group input-donor-group">
+    <button type="submit" [disabled]="registerDonorsForm.invalid" class="btn btn-danger">Submit</button>
+  </div>
+</form>

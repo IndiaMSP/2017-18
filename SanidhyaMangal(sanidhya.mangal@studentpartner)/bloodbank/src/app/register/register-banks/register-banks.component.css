@@ -1,0 +1,51 @@
+.input-banks{
+    border: none;
+    border-bottom:2px rgba(160, 14, 14, 0.45) solid ;
+    background: #ddddf2;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+    color: #2646AD;
+    font-size: 16px;
+    padding-left: 0;
+}
+.input-banks::-webkit-input-placeholder{
+    color: rgba(160, 14, 14, 0.45);
+}
+.input-banks::-moz-placeholder{
+    color: rgba(160, 14, 14, 0.45);
+}
+.input-banks::-ms-input-placeholder{
+    color: rgba(160, 14, 14, 0.45);
+}
+.input-banks:focus::-webkit-input-placeholder{
+    color: #2646AD;
+    transition: ease-in-out .5s;
+    font-style: italic;
+}
+.input-banks:focus::-ms-input-placeholder{
+    color: #2646AD;
+    transition: ease-in-out .5s;
+    font-style: italic;
+}
+.input-banks:focus::-moz-placeholder{
+    color: #2646AD;
+    transition: ease-in-out .5s;
+    font-style: italic;
+}
+.input-banks:focus{
+    border-bottom-color:#2646AD;
+    -webkit-transition: linear 1s all;
+    -moz-transition: linear 1s all;
+    transition: linear 1s all; 
+}
+.label-input-banks{
+    font-size: 16px;
+}
+.errors-banks{
+    color: #214EE0;
+}
+.input-banks-group{
+    padding-top:10px;
+    padding-bottom: 10px; 
+}

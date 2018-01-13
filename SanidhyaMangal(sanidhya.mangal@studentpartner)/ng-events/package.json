@@ -1,0 +1,37 @@
+{
+  "name": "ng2-fundamentals-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run server\" ",
+    "server": "node node_modules/ng2f-server/server.js",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "4.0.0",
+    "@angular/compiler": "4.0.0",
+    "@angular/core": "4.0.0",
+    "@angular/forms": "4.0.0",
+    "@angular/http": "4.0.0",
+    "@angular/platform-browser": "4.0.0",
+    "@angular/platform-browser-dynamic": "4.0.0",
+    "@angular/router": "4.0.0",
+    "core-js": "2.4.1",
+    "ng2f-bootstrap": "^0.0.4",
+    "ng2f-server": "^0.2.3",
+    "rxjs": "5.0.1",
+    "systemjs": "0.19.40",
+    "toastr": "^2.1.2",
+    "zone.js": "0.8.4"
+  },
+  "devDependencies": {
+    "concurrently": "3.2.0",
+    "typescript": "2.1.1",
+    "@types/core-js": "0.9.34",
+    "@types/node": "6.0.46"
+  },
+  "repository": {}
+}
