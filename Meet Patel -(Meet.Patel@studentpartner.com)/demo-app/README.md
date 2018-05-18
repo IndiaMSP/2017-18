@@ -1,6 +1,6 @@
-# ui
+# demo
 
-> Vue project
+> Vue 
 
 ## Build Setup
 
